@@ -1,20 +1,15 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+// Package imports:
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+// Project imports:
+import 'aplication.dart';
+import 'core/utils/bloc_observer.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
-  }
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = AppBlocObserver();
+  runApp(const MyApp());
 }

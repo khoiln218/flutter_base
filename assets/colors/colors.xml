@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="primary">#FF1B55</color>
+  <color name="secondary">#3377FF</color>
+  <color name="white">#FFFFFF</color>
+  <color name="black">#FF000000</color>
+  <color name="grey">#494B58</color>
+  <color name="blue_light">#99BBFF</color>
+  <color name="text_grey">#6B7588</color>
+  <color name="secondary_text">#637381</color>
+  <color name="dark_grey">#383A46</color>
+  <color name="dark_white">#C7C9D9</color>
+  <color name="green_light">#6BDED5</color>
+  <color name="active_green">#61E7AD</color>
+  <color name="app_bar_status">#37297E</color>
+  <color name="active_green_text">#38AB65</color>
+  <color name="active_green_button">#22C55E</color>
+  <color name="orange_color">#E67F3F</color>
+  <color name="disable_color">#333333</color>
+  <color name="hint_text_color">#848484</color>
+
+</resources>
