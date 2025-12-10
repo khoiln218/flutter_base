@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> with StatefulLifecycleLogger {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Login")),
+      appBar: AppBar(title: const Text("Login")),
       body: BlocConsumer<LoginBloc, LoginState>(
         listener: (context, state) {
           if (state is LoginSuccess) {
@@ -64,14 +64,16 @@ class _LoginPageState extends State<LoginPage> with StatefulLifecycleLogger {
               Form(
                 key: _formKey,
                 child: Padding(
-                  padding: EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
                       TextFormField(
                         controller: _userCtrl,
                         onChanged: (value) => _formKey.currentState?.validate(),
                         readOnly: isLoading,
-                        decoration: InputDecoration(labelText: "Username"),
+                        decoration: const InputDecoration(
+                          labelText: "Username",
+                        ),
                         validator: (value) => BaseValidator.required(value),
                       ),
                       BlocBuilder<PasswordVisibilityCubit, bool>(
@@ -100,24 +102,26 @@ class _LoginPageState extends State<LoginPage> with StatefulLifecycleLogger {
                           );
                         },
                       ),
-                      SizedBox(height: 16),
+                      const SizedBox(height: 16),
                       ElevatedButton(
-                        style: TextButton.styleFrom(minimumSize: Size(100, 40)),
+                        style: TextButton.styleFrom(
+                          minimumSize: const Size(100, 40),
+                        ),
                         onPressed: isLoading ? null : () => _submit(context),
                         child: isLoading
-                            ? SizedBox(
+                            ? const SizedBox(
                                 width: 24,
                                 height: 24,
                                 child: CircularProgressIndicator(
                                   strokeWidth: 2,
                                 ),
                               )
-                            : Text("Login"),
+                            : const Text("Login"),
                       ),
                       if (state is LoginFailure)
                         Text(
                           state.message,
-                          style: TextStyle(color: Colors.red),
+                          style: const TextStyle(color: Colors.red),
                         ),
                     ],
                   ),

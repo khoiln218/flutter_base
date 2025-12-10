@@ -1,5 +1,13 @@
 include: package:flutter_lints/flutter.yaml
 
+linter:
+  rules:
+    # Một số rule clean code thêm
+    avoid_print: true
+    prefer_const_constructors: true
+    prefer_final_locals: true
+    avoid_unnecessary_containers: true
+
 analyzer:
   errors:
     constant_identifier_names: ignore

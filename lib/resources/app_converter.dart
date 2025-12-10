@@ -1,17 +1,17 @@
 class AppConverter {
   static String formatDurationToTime(Duration duration) {
     String twoDigits(int n) => n.toString().padLeft(2, '0');
-    String hours = twoDigits(duration.inHours);
-    String minutes = twoDigits(duration.inMinutes.remainder(60));
-    String seconds = twoDigits(duration.inSeconds.remainder(60));
+    final String hours = twoDigits(duration.inHours);
+    final String minutes = twoDigits(duration.inMinutes.remainder(60));
+    final String seconds = twoDigits(duration.inSeconds.remainder(60));
     if (duration.inHours == 0) return "$minutes:$seconds";
     return "$hours:$minutes:$seconds";
   }
 
   static DateTime? convertToDateTime(String? timestampStr) {
     if ((timestampStr ?? '').isNotEmpty) {
-      int timestamp = int.parse(timestampStr!);
-      DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp);
+      final int timestamp = int.parse(timestampStr!);
+      final DateTime dateTime = DateTime.fromMillisecondsSinceEpoch(timestamp);
       return dateTime;
     } else {
       return null;
@@ -40,16 +40,16 @@ class AppConverter {
 
   static String customFormatDateTime(DateTime? dateTime) {
     if (dateTime == null) return '';
-    int year = dateTime.year;
-    int month = dateTime.month;
-    int day = dateTime.day;
-    int hour = dateTime.hour;
-    int minute = dateTime.minute;
-    String period = hour >= 12 ? "오후" : "오전";
-    int formattedHour = hour > 12 ? hour - 12 : (hour == 0 ? 12 : hour);
-    String monthStr = month.toString().padLeft(2, '0');
-    String dayStr = day.toString().padLeft(2, '0');
-    String minuteStr = minute.toString().padLeft(2, '0');
+    final int year = dateTime.year;
+    final int month = dateTime.month;
+    final int day = dateTime.day;
+    final int hour = dateTime.hour;
+    final int minute = dateTime.minute;
+    final String period = hour >= 12 ? "오후" : "오전";
+    final int formattedHour = hour > 12 ? hour - 12 : (hour == 0 ? 12 : hour);
+    final String monthStr = month.toString().padLeft(2, '0');
+    final String dayStr = day.toString().padLeft(2, '0');
+    final String minuteStr = minute.toString().padLeft(2, '0');
 
     return "$year.$monthStr.$dayStr $period $formattedHour:$minuteStr";
   }

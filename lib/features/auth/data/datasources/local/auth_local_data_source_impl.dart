@@ -22,9 +22,9 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
       final str = jsonEncode(session.toJson());
       final isSuccess = await prefs.setString(_key, str);
       if (isSuccess) {
-        return Right(true);
+        return const Right(true);
       } else {
-        return Left(UnknownFailure());
+        return const Left(UnknownFailure());
       }
     } catch (error) {
       return Left(UnexpectedFailure(error));
@@ -35,7 +35,7 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   Future<Either<Failure, SignInResponse>> getSession() async {
     try {
       final str = prefs.getString(_key);
-      if (str == null) return Left(UnknownFailure());
+      if (str == null) return const Left(UnknownFailure());
       final map = jsonDecode(str) as Map<String, dynamic>;
       final session = SignInResponse.fromJson(map);
       return Right(session);
@@ -48,10 +48,10 @@ class AuthLocalDataSourceImpl implements AuthLocalDataSource {
   Future<Either<Failure, bool>> clearSession() async {
     try {
       final isSuccess = await prefs.remove(_key);
-      if (isSuccess) return Right(true);
+      if (isSuccess) return const Right(true);
     } catch (error) {
       return Left(UnexpectedFailure(error));
     }
-    return Left(UnknownFailure());
+    return const Left(UnknownFailure());
   }
 }

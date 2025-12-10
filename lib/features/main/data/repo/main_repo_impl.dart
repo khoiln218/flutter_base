@@ -31,7 +31,7 @@ class MainRepoImpl implements MainRepo {
     required int limit,
   }) async {
     await Future.delayed(const Duration(seconds: 1));
-    if (page > 3) return Right([]);
+    if (page > 3) return const Right([]);
     return Right(
       List.generate(limit, (i) => "Item ${(page - 1) * limit + i + 1}"),
     );

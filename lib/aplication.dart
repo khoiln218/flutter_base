@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider.value(value: sl<AuthBloc>(), child: AppView());
+    return BlocProvider.value(value: sl<AuthBloc>(), child: const AppView());
   }
 }
 

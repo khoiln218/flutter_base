@@ -27,14 +27,14 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> with StatefulLifecycleLogger {
   @override
   void initState() {
-    context.read<MainBloc>().add(MainRequested());
+    context.read<MainBloc>().add(const MainRequested());
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Home")),
+      appBar: AppBar(title: const Text("Home")),
       body: Stack(
         children: [
           Center(
@@ -47,12 +47,12 @@ class _MainPageState extends State<MainPage> with StatefulLifecycleLogger {
                   onPressed: () {
                     context.pushNamed(Routes.userListPage);
                   },
-                  child: Text('User Page List'),
+                  child: const Text('User Page List'),
                 ),
                 const SizedBox(height: 8),
                 ElevatedButton(
                   onPressed: () => sl<AuthBloc>().add(LogoutRequested()),
-                  child: Text('Đăng xuất'),
+                  child: const Text('Đăng xuất'),
                 ),
               ],
             ),

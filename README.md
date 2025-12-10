@@ -1,7 +1,5 @@
 # Flutter Base Template
 
-![Architecture Diagram](https://raw.githubusercontent.com/user/repo/main/architecture.png)
-
 ## 1. Khởi tạo Project từ Template
 
 ### Bước 1: Tạo project mới từ template
@@ -21,8 +19,8 @@ chmod +x create_env.sh
 #### Tạo file launch.json
 
 ```sh
-chmod +x scripts/create_launch_json.sh
-./scripts/create_launch_json.sh
+chmod +x create_launch_json.sh
+./create_launch_json.sh
 ```
 
 #### Generate assets, g.dart models và retrofit API
@@ -64,8 +62,8 @@ lib/
 
 ```mermaid
 flowchart LR
-    A[Presentation Layer\nUI + Bloc] --> B[Domain Layer\nEntities + Usecases + Repo Interface]
-    B --> C[Data Layer\nRepositories Impl + Models + Datasources]
+    A[Presentation Layer<br/>UI + Bloc] --> B[Domain Layer<br/>Entities + Usecases + Repo Interface]
+    B --> C[Data Layer<br/>Repositories Impl + Models + Datasources]
     C --> D[(Remote API / Local Storage)]
 ```
 
@@ -88,7 +86,7 @@ flowchart TD
     F_Domain --> R_Interface[repo interface]
 
     F_Presentation --> Bloc[bloc/]
-    F_Presentation --> UI[screens + widgets]
+    F_Presentation --> UI[pages + widgets]
 ```
 
 ---
@@ -117,6 +115,18 @@ Tích hợp theo flow:
 
 ```sh
 ./cmd gen
+```
+
+### Sort import và fix lint rules:
+
+```sh
+./cmd fix
+```
+
+### Build aab theo môi trường:
+
+```sh
+./cmd build-{env}
 ```
 
 ---
