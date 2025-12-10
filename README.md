@@ -93,7 +93,7 @@ flowchart TD
 
 ## 3. Demo Tính Năng Authentication
 
-Sử dụng sample API: [https://dummyjson.com/docs](https://dummyjson.com/docs)
+Sử dụng sample API: [https://dummyjson.com/docs/auth](https://dummyjson.com/docs/auth)
 
 Ví dụ API login:
 
